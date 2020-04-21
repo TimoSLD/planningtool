@@ -1,0 +1,1 @@
+<footer>&copy; [Timo Lemmen] 2020</footer>
