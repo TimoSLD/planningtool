@@ -20,11 +20,9 @@
         <div class="jumbotron mt-3">
         <h1 class="text-center ">welkom</h1>
     </div>
-    <nav class="navbar navbar-light bg-light mb-3">
-        <a class="navbar-brand" href="index.php"><i class="fas fa-home"></i>home</a>
-        <a class="navbar-brand" href="games.php"><i class="fas fa-gamepad"></i>games</a>
-        <a class="navbar-brand" href="#"><i class="fas fa-calendar"></i>planner</a>
-    </nav>
+    <?php 
+        require_once('includes/navbar.php'); 
+    ?>
     </div>
     <div class="container img-thumbnail mt-3 mb-3">
         <h1 class="text-center ">voorbeelden:</h1>

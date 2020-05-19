@@ -2,9 +2,8 @@
      require('includes/function.php');
      $conn = openDatabaseConnection();
 
-     $result = getOneGame();
+     $result = getOnePlanning();
 
-     $count = countGames();
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +20,7 @@
 <body class="bg-dark">
     <div class="container-fluid img-thumbnail bg-dark">
         <div class="jumbotron mt-3">
-            <h1 class="text-center"><?= $result['name'] ?></h1>
+            <h1 class="text-center"><?= $result['game'] ?></h1>
             <a class="backbutton float-right" href='games.php'><i class="fas fa-long-arrow-alt-left"></i> Terug</a>
         </div>
         <?php 
@@ -41,17 +40,11 @@
                 <div class=""><a>maximum players: </a><?= $result['max_players']?></div>
                 <div class=""><a>explain minutes: </a><?= $result['explain_minutes']?></div>
                 <div class=""><a>play minutes: </a><?= $result['play_minutes']?></div></div>
-            </div>
-            <div class="img-thumbnail mt-3">
-                <div class=""><h2>youtube</h2><?= $result['youtube']?></div>
-                <a href="<?= $result['url']?>">
-                    <button type="button" class="btn btn-dark" title="buy game">
-                    <i class="fas fa-shopping-cart"></i></button>
-                </a>
-                <a href="planner.php?id=<?= $result['id'] ?>">
-                    <button type="button" class="btn btn-dark" title="plan game">
-                    <i class="fas fa-calendar"></i></button>
-                </a>
+            </div> 
+            <div class="mt-2 pt-3 col img-thumbnail">
+            <div class=""><a>starttijd: </a><?= $result['date']?></div>
+                <div class=""><a>uitlegger: </a><?= $result['uitlegger']?></div>
+                <div class=""><a>spelers: </a><?= $result['spelers']?></div></div>
             </div>
         </div>
 </body>

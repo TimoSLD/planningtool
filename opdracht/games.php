@@ -3,6 +3,7 @@
     $conn = openDatabaseConnection();
 
     $result = getAllGames();
+
     $count = countGames();
 ?>
 
@@ -23,11 +24,9 @@
             <h1 class="text-center ">alle <?=$count?> games</h1>
         </div>
     </div>
-    <nav class="navbar navbar-light bg-light mb-3">
-        <a class="navbar-brand" href="index.php"><i class="fas fa-home"></i>home</a>
-        <a class="navbar-brand" href="games.php"><i class="fas fa-gamepad"></i>games</a>
-        <a class="navbar-brand" href="#"><i class="fas fa-calendar"></i>planner</a>
-    </nav>
+    <?php 
+        require('includes/navbar.php');
+    ?>
     <div class="container img-thumbnail">
         <h2>alle <?=$count?> games</h2>
             <div class="row">
@@ -39,6 +38,10 @@
                             <a href="detail.php?id=<?= $row['id'] ?>">
                                 <button type="button" class="btn btn-dark" title="bekijk game">
                                 <i class="fa fa-eye"></i></button>
+                            </a>
+                            <a href="planner.php?id=<?= $row['id'] ?>">
+                                <button type="button" class="btn btn-dark" title="plan game">
+                                <i class="fas fa-calendar"></i></button>
                             </a>
                         </div>
                     </div>
